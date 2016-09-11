@@ -16,8 +16,19 @@
 
       // anim.addEventListener("animationend", AnimationListener, false);
 
+      var pathname = window.location.pathname
+
+      if(pathname == "/camera/healthy-demo"){
+          $("#upload-image-btn").attr("href", $("#upload-image-btn").attr("href")+"?img=positive.jpg");
+      } else if (pathname == "/camera/unhealthy-demo"){
+          $("#upload-image-btn").attr("href", $("#upload-image-btn").attr("href")+"?img=low_nit_test.png");
+        $('.camera-container').addClass('taken');
+        $('.camera-container').addClass('unhealthy');
+      }
+      console.log($("#upload-image-btn").attr("href"));
       $("#clicker").click(function () {
         $('.camera-container').toggleClass('taken');
+        $('.camera-container').addClass('healthy');
       });
       $("#uploader").click(function () {
         $('.camera-container').toggleClass('uploading');
@@ -40,6 +51,8 @@
 </head>
 <body class="bodycam">
     <div class="camera-container">
+        <i class="fa fa-bars"></i>
+
 <!--       <span class="appname">Bio-Diagnosis</span>
  -->      <div class="takepic" id="clicker"></div>
       <div class="bottombar">
@@ -48,7 +61,7 @@
         <div><i class="fa fa-gear"></i>Settings</div>
       </div>
       <div id="uploader">
-        <i class="fa fa-cloud-upload"></i>
+        <i class="fa fa-tasks"></i>
       </div>
     </div>
     <a id="upload-image-btn" href="/upload-image" style="display: none;"></a>
