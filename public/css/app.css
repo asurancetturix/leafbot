@@ -475,6 +475,7 @@ html{
 .camera-container.taken.nothealthy {
   background: #000 url("/img/low_nit_test.png") no-repeat;
   background-position: 0 -150px;
+  background-size: cover;
 }
 
 .camera-container.taken:before, .taken .takepic {
@@ -660,7 +661,7 @@ html{
   margin-top: 30px;
 }
 
-.actionlogo div {
+.actionlogo a {
     width: 160px;
     margin: 0 auto;
     text-align: left;
@@ -670,13 +671,16 @@ html{
     border-radius: 4px;
     padding-left: 10px;
     cursor: pointer;
+    display: block;
+    color: #fff;
+    text-decoration: none;
 }
 
-.actionlogo div:hover {
+.actionlogo a:hover {
   background: #333;
 }
 
-.actionlogo div i {
+.actionlogo a i {
   width: 30px;
   text-align: center;
   padding-right: 10px;
@@ -751,7 +755,6 @@ i.fa.fa-frown-o {
     color: rgba(207, 0, 15, 0.8);
 }
 
-#contentParent { display: none; }
 
 .camera-container.unhealthy:before {
   border-color: rgba(207, 0, 15, 0.8) !important;
