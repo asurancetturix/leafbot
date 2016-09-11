@@ -21,6 +21,9 @@
           
         });
       });
+      $("#uploader").click(function () {
+        $('.camera-container').toggleClass('uploading');
+      });      
     });    
   </script>  
 </head>
@@ -32,7 +35,9 @@
         <div><i class="fa fa-life-ring"></i>Help</div>      
         <div><i class="fa fa-adjust"></i>Analyze</div>
         <div><i class="fa fa-gear"></i>Settings</div>
-        <div><i class="fa fa-share-alt"></i>Share</div>        
+      </div>
+      <div id="uploader">
+        <i class="fa fa-cloud-upload"></i>
       </div>
     </div>
 
