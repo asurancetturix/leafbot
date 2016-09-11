@@ -86,7 +86,7 @@ app.get( '/upload-image', function(req, res) {
     console.log(req.query.img);
     return http.get({
         host: 'gateway-a.watsonplatform.net',
-        path: '/visual-recognition/api/v3/classify?api_key=visualrecognitionapikeytotestquerieswith&url=https://github.com/asurancetturix/leafbot/blob/master/public/img/'+req.query.img+'?raw=true&version=2016-05-19&classifier_ids=[%22leafs_187713955%22]'
+        path: '/visual-recognition/api/v3/classify?api_key=visualrecognitionapikeytotestquerieswith&url=https://github.com/asurancetturix/leafbot/blob/master/public/img/'+req.query.img+'?raw=true&version=2016-05-19&classifier_ids=[%22leafs_62279190%22]'
     }, function(response) {
         // Continuously update stream with data
         var body = '';
