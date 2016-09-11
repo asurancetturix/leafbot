@@ -8,8 +8,16 @@
   <meta property="og:description" content="PlantBot" />
   <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
   <link rel="stylesheet" href="css/app.css">
+    <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-T8Gy5hrqNKT+hzMclPo118YTQO6cYprQmhrYwIiQ/3axmI1hQomh7Ud2hPOy8SP1" crossorigin="anonymous">    
+
 </head>
 <body>
+<div class="camera-container healthy">
+    <h1 class="landlogo">Watson Insights</h1>
+
+    <i class="fa fa-bars"></i>
+    <img class="plantlogo" src="/img/watson_logo.png">
+
   <div id="view-change-button" class="button" onclick="PayloadPanel.togglePanel(event, this)">
     <img class="option full" src="../img/Chat Button.png">
     <img class="option not-full" src="../img/Code Button.png">
@@ -33,7 +41,7 @@
       <div id="payload-response" class="payload"></div>
     </div>
   </div>
-
+</div>
   <script src="js/common.js"></script>
   <script src="js/api.js"></script>
   <script src="js/conversation.js"></script>
