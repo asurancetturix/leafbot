@@ -61,19 +61,23 @@ var visualRecognition = watson.visual_recognition({
   version_date: '2015-05-19'
 });
 
+app.get( '/home', function(req, res) {  
+  res.sendfile(__dirname + '/public/landing.html');
+});
+
+app.get( '/healthy', function(req, res) {  
+  res.sendfile(__dirname + '/public/healthy.html');
+});
+
+app.get( '/unhealthy', function(req, res) {  
+  res.sendfile(__dirname + '/public/unhealthy.html');
+});
+
+
 app.get( '/image', function(req, res) {  
-
-  // visualRecognition.classify(req.params, function getClassifier(err, classifier) {
-  //   if (err) {
-  //     console.log(err);
-  //     return res.status(err.code || 500).json(err);
-  //   }
-  //   res.json(classifier);
-  // });
-
     return http.get({
         host: 'gateway-a.watsonplatform.net',
-        path: '/visual-recognition/api/v3/classify?api_key=b4fca458f5b00946793b3fd79f7c6384f4833530&url=https://raw.githubusercontent.com/asurancetturix/leafbot/master/public/img/low_nit_test.png&version=2016-05-19&classifier_ids=leafs_968008557&threshold=0'
+        path: '/visual-recognition/api/v3/classify?api_key=b4fca458f5b00946793b3fd79f7c6384f4833530&url=https://github.com/asurancetturix/leafbot/blob/master/public/img/low_nit_test.png?raw=true&version=2016-05-19&classifier_ids=[%22leafs_187713955%22]'
     }, function(response) {
         // Continuously update stream with data
         var body = '';
