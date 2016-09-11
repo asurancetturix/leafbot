@@ -429,3 +429,111 @@ html{
   font-weight: normal;
   font-style: normal;
 }
+
+ body.bodycam { margin: 0; font-family: Montserrat, sans-serif; padding: 10px; background: #000; }
+*, *:before, *:after { box-sizing: border-box; }
+
+.camera-container {
+  background: #000;
+  height: calc(100vh - 20px);
+  width: calc(100vw - 20px);
+  position: relative;
+  border-radius: 8px;
+}
+.camera-container:before {
+  content: "";
+  position: absolute;
+  border: 4px solid rgba(207, 0, 15, 0.8);
+  top: 0px;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  border-radius: 8px;
+  transition: 0.1s ease-in;
+}
+.camera-container.taken {
+  background: #000 url("http://www.e-ecofarming.eu/images/best-fertilizer-for-walnut-trees-plants-urine-potted-4v.jpg") no-repeat;
+  background-size: cover;
+}
+.camera-container.taken:before {
+  border-color: green;
+}
+.camera-container.taken .takepic {
+  display: none;
+}
+.camera-container.taken .bottombar div {
+  background: green;
+}
+.camera-container .takepic {
+  width: 100px;
+  height: 100px;
+  margin: 0 auto;
+  display: block;
+  text-align: center;
+  top: 40vh;
+  position: relative;
+  border-radius: 50%;
+  border: 2px solid rgba(207, 0, 15, 0.8);
+  cursor: pointer;
+}
+.camera-container .takepic:hover {
+  border: 2px solid #cf000f;
+}
+.camera-container .takepic:before {
+  content: "";
+  display: block;
+  border: 2px solid rgba(207, 0, 15, 0.8);
+  height: 45%;
+  width: 45%;
+  margin: 0 auto;
+  position: relative;
+  top: 25%;
+  border-radius: 4px;
+}
+.camera-container .appname {
+  display: block;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  color: rgba(207, 0, 15, 0.8);
+  text-transform: uppercase;
+  font-size: 20px;
+}
+.camera-container .bottombar {
+  height: 40px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  text-align: center;
+}
+.camera-container .bottombar:after {
+  display: table;
+  clear: both;
+  content: "";
+}
+.camera-container .bottombar div {
+  width: 25%;
+  float: left;
+  color: rgba(255, 255, 255, 0.6);
+  background: rgba(207, 0, 15, 0.4);
+  height: 100%;
+  font-size: 0px;
+  cursor: pointer;
+  transition: 0.1s ease-in;
+}
+.camera-container .bottombar div:first-child {
+  border-bottom-left-radius: 8px;
+}
+.camera-container .bottombar div:last-child {
+  border-bottom-right-radius: 8px;
+}
+.camera-container .bottombar div:hover {
+  color: white;
+  background: rgba(207, 0, 15, 0.8);
+}
+.camera-container .bottombar div i {
+  display: block;
+  padding-top: 7px;
+  font-size: 22px;
+}
