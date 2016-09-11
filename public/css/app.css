@@ -646,7 +646,7 @@ html{
 }
 
 .actionlogo {
-  margin-top: 40px;
+  margin-top: 30px;
 }
 
 .actionlogo div {
@@ -655,7 +655,7 @@ html{
     text-align: left;
     line-height: 40px;
     border: 2px solid #666;
-    margin-top: 25px;
+    margin-top: 20px;
     border-radius: 4px;
     padding-left: 10px;
     cursor: pointer;
@@ -703,6 +703,15 @@ html{
     font-size: 21px;  
 }
 
+.unhealthy i.fa.fa-bars {
+  color: rgba(207, 0, 15, 0.8);
+    position: absolute;
+    top: 18px;
+    left: 20px;
+    font-size: 21px;  
+}
+
+
 .resultlogo {
   width: 75%;
   margin: 0 auto;
@@ -713,4 +722,26 @@ html{
   text-align: center;
   font-size: 32px;
   margin: 30px 0;
+}
+
+i.fa.fa-smile-o {
+    font-size: 126px;
+    display: block;
+    width: 110px;
+    margin: 0 auto;
+    color: green;
+}
+
+i.fa.fa-frown-o {
+    font-size: 126px;
+    display: block;
+    width: 110px;
+    margin: 0 auto;
+    color: rgba(207, 0, 15, 0.8);
+}
+
+#contentParent { display: none; }
+
+.camera-container.unhealthy:before {
+  border-color: rgba(207, 0, 15, 0.8) !important;
 }

@@ -18,9 +18,22 @@
     });    
   </script>  
 </head>
-<body class="unhealthy">
-  <h1>UNHEALTHY</h1>
-    
+<body class="healthy">
+      <div class="camera-container unhealthy">
+    <h1 class="landlogo">Diagnostic</h1>
+    <i class="fa fa-frown-o"></i>
+    <i class="fa fa-bars"></i>
+
+    <div class="resultlogo">
+      According to IBM Watson, your plant is:
+      <div class="statuslogo">Low Nitrogen</div>
+Nitrogen deficiency can be prevented by <strong>using grass mowings as a mulch</strong>, or foliar feeding with manure, and in the longer term by building up levels of organic matter in the soil. 
+    </div>
+      <div class="bottombar">
+        <div><i class="fa fa-life-ring"></i>Help</div>      
+        <div><i class="fa fa-home"></i>Analyze</div>
+        <div><i class="fa fa-gear"></i>Settings</div>
+      </div>    
   <div id="contentParent" class="responsive-columns-wrapper">
     <div id="chat-column-holder" class="responsive-column content-column">
       <div class="chat-column">
@@ -40,6 +53,7 @@
       <div id="payload-response" class="payload"></div>
     </div>
   </div>
+  </div>    
 
   <script src="js/common.js"></script>
   <script src="js/api.js"></script>
