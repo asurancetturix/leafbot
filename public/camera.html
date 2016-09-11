@@ -15,7 +15,11 @@
   <script type="text/javascript">
     $(document).ready(function() {
       $("#clicker").click(function () {
-        $('.camera-container').toggleClass('taken');
+        // $('.camera-container').toggleClass('taken');
+        $.get('/image')
+        .error(function (error) {
+          
+        });
       });
     });    
   </script>  
@@ -35,6 +39,7 @@
   <script src="js/common.js"></script>
   <script src="js/api.js"></script>
   <script src="js/conversation.js"></script>
+  <script src="js/image_recognition.js"></script>
   <script src="js/payload.js"></script>
   <script src="js/global.js"></script>
 </body>

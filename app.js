@@ -53,6 +53,11 @@ var conversation = watson.conversation( {
   version: 'v1'
 } );
 
+app.get( '/image', function(req, res) {  
+  
+});
+
+
 // Endpoint to be call from the client side
 app.post( '/api/message', function(req, res) {
   var workspace = process.env.WORKSPACE_ID || '<workspace-id>';
