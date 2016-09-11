@@ -68,7 +68,6 @@ div {
 }
 
 .chat-column {
-  height: 100%;
   padding: 0rem 0 0.625rem 0;
   margin: auto;
   text-align: left;
@@ -80,7 +79,7 @@ div {
   margin: 0.75rem;
   overflow-y: auto;
   overflow-x: hidden;
-  height: calc(100% - 290px);
+  height: calc(100% - 300px);
 }
 
 .message-inner {
@@ -435,8 +434,11 @@ html{
   background: #000;
   height: calc(100vh - 20px);
   width: calc(100vw - 20px);
+  max-width: 420px;
+  margin: 0 auto; 
   position: relative;
   border-radius: 8px;
+  overflow: hidden;
 }
 .camera-container:before {
   content: "";
@@ -669,7 +671,7 @@ html{
 }
 
 .actionlogo a {
-    width: 160px;
+    width: 170px;
     margin: 0 auto;
     text-align: left;
     line-height: 40px;
