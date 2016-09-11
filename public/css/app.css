@@ -472,11 +472,7 @@ html{
   background: #000 url("/img/positive.jpg") no-repeat;
 }
 
-<<<<<<< HEAD
-.camera-container.taken.unhealthy {
-=======
 .camera-container.taken.nothealthy {
->>>>>>> 22ad864e0a3b867a96bf8803aff791793fa55924
   background: #000 url("/img/low_nit_test.png") no-repeat;
   background-position: 0 -150px;
   background-size: cover;
