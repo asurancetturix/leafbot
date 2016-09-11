@@ -583,10 +583,10 @@ html{
 }
 
 .camera-container.taken.uploading:after { 
-  animation: upload-file 3s; /* IE 10+, Fx 29+ */
-  -webkit-animation: upload-file 3s; /* Safari 4+ */
-  -moz-animation: upload-file 3s; /* Fx 5+ */
-  -o-animation: upload-file 3s; /* Fx 5+ */
+  animation: upload-file 5s; /* IE 10+, Fx 29+ */
+  -webkit-animation: upload-file 5s; /* Safari 4+ */
+  -moz-animation: upload-file 5s; /* Fx 5+ */
+  -o-animation: upload-file 5s; /* Fx 5+ */
   content: "";
   background: rgba(46,204,64,0.4);
   height: 100%;
