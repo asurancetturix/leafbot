@@ -55,11 +55,7 @@ var conversation = watson.conversation( {
   version: 'v1'
 } );
 
-var visualRecognition = watson.visual_recognition({
-  version: 'v3',
-  api_key: 'b4fca458f5b00946793b3fd79f7c6384f4833530',
-  version_date: '2015-05-19'
-});
+// HACKATON CODE
 
 app.get( '/home', function(req, res) {  
   res.sendfile(__dirname + '/public/landing.html');
@@ -82,10 +78,11 @@ app.get( '/unhealthy', function(req, res) {
 });
 
 
-app.get( '/image', function(req, res) {  
+app.get( '/upload-image', function(req, res) {  
+    console.log(req.query.img);
     return http.get({
         host: 'gateway-a.watsonplatform.net',
-        path: '/visual-recognition/api/v3/classify?api_key=b4fca458f5b00946793b3fd79f7c6384f4833530&url=https://github.com/asurancetturix/leafbot/blob/master/public/img/low_nit_test.png?raw=true&version=2016-05-19&classifier_ids=[%22leafs_187713955%22]'
+        path: '/visual-recognition/api/v3/classify?api_key=b4fca458f5b00946793b3fd79f7c6384f4833530&url=https://github.com/asurancetturix/leafbot/blob/master/public/img/'+req.query.img+'?raw=true&version=2016-05-19&classifier_ids=[%22leafs_187713955%22]'
     }, function(response) {
         // Continuously update stream with data
         var body = '';
@@ -97,21 +94,19 @@ app.get( '/image', function(req, res) {
             // Data reception is done, do whatever with it!
             var parsed = JSON.parse(body);
             res.setHeader('Content-Type', 'application/json');
-            res.send(JSON.stringify(parsed));
-        });
-    });
+            console.log(parsed);
 
-    // $.get('https://gateway-a.watsonplatform.net/visual-recognition/api/v3/classify?api_key=b4fca458f5b00946793b3fd79f7c6384f4833530&url=https://raw.githubusercontent.com/asurancetturix/leafbot/master/public/img/low_nit_test.png&version=2016-05-19&classifier_ids=leafs_1404488516&threshold=0')
-    //   .done(function(result){
-    //     console.log('SUCCESS');
-    //     console.log(result);
-    //   })
-    //   .error(function (error) {
-    //     console.log('ERROR');
-    //     console.log(error);
-    //   });
-    
+            if(parsed.images["0"].classifiers["0"].classes["0"].class == "unhealthy_leafs"){
+              res.redirect('unhealthy');
+            }else {
+              res.redirect('healthy');
+            }
+            // res.send(JSON.stringify(parsed));
+        });
+    });    
 });
+
+// END HACKATON CODE
 
 
 // Endpoint to be call from the client side
