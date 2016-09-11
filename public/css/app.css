@@ -488,7 +488,7 @@ html{
 .camera-container.taken .takepic {
   display: none;
 }
-.camera-container.taken .bottombar div {
+.camera-container.taken .bottombar a {
   background: green;
 }
 
@@ -498,7 +498,7 @@ html{
 .camera-container.healthy .takepic {
   display: none;
 }
-.camera-container.healthy .bottombar div {
+.camera-container.healthy .bottombar a {
   background: green;
 }
 
@@ -545,18 +545,24 @@ html{
   right: 0px;
   text-align: center;
 }
+
+.camera-container .bottombar a {
+  text-decoration: none;
+  color: #fff;
+}
+
 .camera-container .bottombar:after {
   display: table;
   clear: both;
   content: "";
 }
 
-.landing .camera-container .bottombar div {
+.landing .camera-container .bottombar a {
   background: rgba(0,180,226,0.8);
   color: #fff;
 }
 
-.camera-container .bottombar div {
+.camera-container .bottombar a {
   width: 33.3333%;
   float: left;
   color: rgba(255, 255, 255, 0.6);
@@ -566,17 +572,17 @@ html{
   cursor: pointer;
   transition: 0.1s ease-in;
 }
-.camera-container .bottombar div:first-child {
+.camera-container .bottombar a:first-child {
   border-bottom-left-radius: 8px;
 }
-.camera-container .bottombar div:last-child {
+.camera-container .bottombar a:last-child {
   border-bottom-right-radius: 8px;
 }
-.camera-container .bottombar div:hover {
+.camera-container .bottombar a:hover {
   color: white;
   background: rgba(207, 0, 15, 0.8);
 }
-.camera-container .bottombar div i {
+.camera-container .bottombar a i {
   display: block;
   padding-top: 7px;
   font-size: 22px;
