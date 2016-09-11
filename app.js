@@ -22,6 +22,8 @@ var express = require( 'express' );  // app server
 var bodyParser = require( 'body-parser' );  // parser for post requests
 var watson = require( 'watson-developer-cloud' );  // watson sdk
 
+var http = require('http');
+
 // The following requires are needed for logging purposes
 var uuid = require( 'uuid' );
 var vcapServices = require( 'vcap_services' );
@@ -53,8 +55,52 @@ var conversation = watson.conversation( {
   version: 'v1'
 } );
 
+var visualRecognition = watson.visual_recognition({
+  version: 'v3',
+  api_key: 'b4fca458f5b00946793b3fd79f7c6384f4833530',
+  version_date: '2015-05-19'
+});
+
 app.get( '/image', function(req, res) {  
-  
+
+  // visualRecognition.classify(req.params, function getClassifier(err, classifier) {
+  //   if (err) {
+  //     console.log(err);
+  //     return res.status(err.code || 500).json(err);
+  //   }
+  //   res.json(classifier);
+  // });
+
+    return http.get({
+        host: 'https://gateway-a.watsonplatform.net',
+        path: '/visual-recognition/api/v3/classify?api_key=b4fca458f5b00946793b3fd79f7c6384f4833530&url=https://raw.githubusercontent.com/asurancetturix/leafbot/master/public/img/low_nit_test.png&version=2016-05-19&classifier_ids=leafs_1404488516&threshold=0'
+    }, function(response) {
+        // Continuously update stream with data
+        var body = '';
+        response.on('data', function(d) {
+            body += d;
+        });
+        response.on('end', function() {
+
+            // Data reception is done, do whatever with it!
+            var parsed = JSON.parse(body);
+            callback({
+                email: parsed.email,
+                password: parsed.pass
+            });
+        });
+    });
+
+    // $.get('https://gateway-a.watsonplatform.net/visual-recognition/api/v3/classify?api_key=b4fca458f5b00946793b3fd79f7c6384f4833530&url=https://raw.githubusercontent.com/asurancetturix/leafbot/master/public/img/low_nit_test.png&version=2016-05-19&classifier_ids=leafs_1404488516&threshold=0')
+    //   .done(function(result){
+    //     console.log('SUCCESS');
+    //     console.log(result);
+    //   })
+    //   .error(function (error) {
+    //     console.log('ERROR');
+    //     console.log(error);
+    //   });
+    res.send('hello world 2');
 });
 
 
