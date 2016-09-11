@@ -18,11 +18,10 @@
 
       var pathname = window.location.pathname
 
-      console.log(pathname);
-
       if(pathname == "/camera/healthy-demo"){
-        
+        var image_for_watson = "XXXXXX";
       } else if (pathname == "/camera/unhealthy-demo"){
+        var image_for_watson = "YYYYYY";
         $('.camera-container').addClass('taken');
         $('.camera-container').addClass('unhealthy');
       }
