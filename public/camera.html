@@ -21,14 +21,19 @@
       });
       $("#uploader").click(function () {
         $('.camera-container').toggleClass('uploading');
-        $.get('/image')
-        .done(function(results){
-          // $('.camera-container').toggleClass('uploading');
-          console.log(results);
-        })
-        .error(function (error) {
+
+        setTimeout(function(){
+          // $( "#upload-image-btn" ).trigger( "click" );
+          document.getElementById("upload-image-btn").click();
+        },4000);
+
+        // $.get('/upload-image')
+        // .done(function(results){
+        //   console.log(results);
+        // })
+        // .error(function (error) {
           
-        });
+        // });
       });      
     });    
   </script>  
@@ -46,6 +51,7 @@
         <i class="fa fa-cloud-upload"></i>
       </div>
     </div>
+    <a id="upload-image-btn" href="/upload-image" style="display: none;"></a>
 
   <script src="js/common.js"></script>
   <script src="js/api.js"></script>
