@@ -57,36 +57,36 @@ var conversation = watson.conversation( {
 
 // HACKATON CODE
 
-app.get( '/home', function(req, res) {  
+app.get( '/home', function(req, res) {
   res.sendfile(__dirname + '/public/landing.html');
 });
 
-app.get( '/camera', function(req, res) {  
+app.get( '/camera', function(req, res) {
   res.sendfile(__dirname + '/public/camera.html');
 });
 
-app.get( '/camera/healthy-demo', function(req, res) {  
+app.get( '/camera/healthy-demo', function(req, res) {
   res.sendfile(__dirname + '/public/camera.html');
 });
 
-app.get( '/camera/unhealthy-demo', function(req, res) {  
+app.get( '/camera/unhealthy-demo', function(req, res) {
   res.sendfile(__dirname + '/public/camera.html');
 });
 
-app.get( '/healthy', function(req, res) {  
+app.get( '/healthy', function(req, res) {
   res.sendfile(__dirname + '/public/healthy.html');
 });
 
-app.get( '/unhealthy', function(req, res) {  
+app.get( '/unhealthy', function(req, res) {
   res.sendfile(__dirname + '/public/unhealthy.html');
 });
 
 
-app.get( '/upload-image', function(req, res) {  
+app.get( '/upload-image', function(req, res) {
     console.log(req.query.img);
     return http.get({
         host: 'gateway-a.watsonplatform.net',
-        path: '/visual-recognition/api/v3/classify?api_key=b4fca458f5b00946793b3fd79f7c6384f4833530&url=https://github.com/asurancetturix/leafbot/blob/master/public/img/'+req.query.img+'?raw=true&version=2016-05-19&classifier_ids=[%22leafs_187713955%22]'
+        path: '/visual-recognition/api/v3/classify?api_key=visualrecognitionapikeytotestquerieswith&url=https://github.com/asurancetturix/leafbot/blob/master/public/img/'+req.query.img+'?raw=true&version=2016-05-19&classifier_ids=[%22leafs_187713955%22]'
     }, function(response) {
         // Continuously update stream with data
         var body = '';
@@ -107,7 +107,7 @@ app.get( '/upload-image', function(req, res) {
             }
             // res.send(JSON.stringify(parsed));
         });
-    });    
+    });
 });
 
 // END HACKATON CODE
