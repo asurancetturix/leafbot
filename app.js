@@ -72,8 +72,8 @@ app.get( '/image', function(req, res) {
   // });
 
     return http.get({
-        host: 'https://gateway-a.watsonplatform.net',
-        path: '/visual-recognition/api/v3/classify?api_key=b4fca458f5b00946793b3fd79f7c6384f4833530&url=https://raw.githubusercontent.com/asurancetturix/leafbot/master/public/img/low_nit_test.png&version=2016-05-19&classifier_ids=leafs_1404488516&threshold=0'
+        host: 'gateway-a.watsonplatform.net',
+        path: '/visual-recognition/api/v3/classify?api_key=b4fca458f5b00946793b3fd79f7c6384f4833530&url=https://raw.githubusercontent.com/asurancetturix/leafbot/master/public/img/low_nit_test.png&version=2016-05-19&classifier_ids=leafs_968008557&threshold=0'
     }, function(response) {
         // Continuously update stream with data
         var body = '';
@@ -84,10 +84,8 @@ app.get( '/image', function(req, res) {
 
             // Data reception is done, do whatever with it!
             var parsed = JSON.parse(body);
-            callback({
-                email: parsed.email,
-                password: parsed.pass
-            });
+            res.setHeader('Content-Type', 'application/json');
+            res.send(JSON.stringify(parsed));
         });
     });
 
@@ -100,7 +98,7 @@ app.get( '/image', function(req, res) {
     //     console.log('ERROR');
     //     console.log(error);
     //   });
-    res.send('hello world 2');
+    
 });
 
 

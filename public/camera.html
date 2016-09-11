@@ -15,14 +15,17 @@
   <script type="text/javascript">
     $(document).ready(function() {
       $("#clicker").click(function () {
-        // $('.camera-container').toggleClass('taken');
-        $.get('/image')
-        .error(function (error) {
-          
-        });
+        $('.camera-container').toggleClass('taken');
       });
       $("#uploader").click(function () {
         $('.camera-container').toggleClass('uploading');
+        $.get('/image')
+        .done(function(results){
+          console.log(results);
+        })
+        .error(function (error) {
+          
+        });
       });      
     });    
   </script>  
