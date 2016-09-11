@@ -16,8 +16,20 @@
 
       // anim.addEventListener("animationend", AnimationListener, false);
 
+      var pathname = window.location.pathname
+
+      console.log(pathname);
+
+      if(pathname == "/camera/healthy-demo"){
+        
+      } else if (pathname == "/camera/unhealthy-demo"){
+        $('.camera-container').addClass('taken');
+        $('.camera-container').addClass('unhealthy');
+      }
+
       $("#clicker").click(function () {
         $('.camera-container').toggleClass('taken');
+        $('.camera-container').addClass('healthy');
       });
       $("#uploader").click(function () {
         $('.camera-container').toggleClass('uploading');

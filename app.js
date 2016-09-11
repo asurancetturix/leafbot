@@ -65,6 +65,14 @@ app.get( '/home', function(req, res) {
   res.sendfile(__dirname + '/public/landing.html');
 });
 
+app.get( '/camera/healthy-demo', function(req, res) {  
+  res.sendfile(__dirname + '/public/camera.html');
+});
+
+app.get( '/camera/unhealthy-demo', function(req, res) {  
+  res.sendfile(__dirname + '/public/camera.html');
+});
+
 app.get( '/healthy', function(req, res) {  
   res.sendfile(__dirname + '/public/healthy.html');
 });

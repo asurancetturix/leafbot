@@ -463,9 +463,20 @@ html{
   pointer-events: none;
 }
 .camera-container.taken {
+  //background: #000 url("http://www.e-ecofarming.eu/images/best-fertilizer-for-walnut-trees-plants-urine-potted-4v.jpg") no-repeat;
   background: #000 url("http://www.e-ecofarming.eu/images/best-fertilizer-for-walnut-trees-plants-urine-potted-4v.jpg") no-repeat;
   background-size: cover;
 }
+
+.camera-container.taken.healthy {
+  background: #000 url("/img/positive.jpg") no-repeat;
+}
+
+.camera-container.taken.unhealthy {
+  background: #000 url("/img/low_nit_test.png") no-repeat;
+  background-position: 0 -150px;
+}
+
 .camera-container.taken:before, .taken .takepic {
   border-color: green !important;
 }
