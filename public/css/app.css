@@ -472,7 +472,7 @@ html{
   background: #000 url("/img/positive.jpg") no-repeat;
 }
 
-.camera-container.taken.unhealthy {
+.camera-container.taken.nothealthy {
   background: #000 url("/img/low_nit_test.png") no-repeat;
   background-position: 0 -150px;
 }
